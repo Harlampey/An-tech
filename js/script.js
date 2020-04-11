@@ -1,14 +1,40 @@
-
+//response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
 
 let choosed = $("#nav-glown");
 
-let pl_image = "images/pl.png"
-let en_image = "images/en.png"
-let de_image = "images/de.png"
+let pl_image = "images/pl.png";
+let en_image = "images/en.png";
+let de_image = "images/de.png";
 
 
 
+
+
+
+function HideSubCategory(key) {
+    $("#" + key + "-section").addClass("subcategory-section-deactive");
+    $("#" + key + "-section img").addClass(".subcategory-image-deactive");
+    setTimeout(function(){
+        $("#" + key + "-section").addClass("d-none");
+    },500);
+}
+function HideSubCategories(){
+    $(".subcategory-section").addClass("subcategory-section-deactive");
+    $(".subcategory-section img").addClass(".subcategory-image-deactive");
+    setTimeout(function(){
+        $(".subcategory-section").addClass("d-none");
+    },500);
+}
+function ShowSubCategory(key){
+    $("#" + key + "-section").removeClass("d-none");
+    setTimeout(function(){
+        $("#" + key + "-section").removeClass("subcategory-section-deactive");
+        $("#" + key + "-section img").removeClass(".subcategory-image-deactive");
+    }, 500);
+    
+}
 $(document).ready(function(){
+
     $("#menu-ul").slideToggle();
 
     $(".open-glown").click(function(){
@@ -18,6 +44,7 @@ $(document).ready(function(){
             choosed = $("#nav-glown");
             
         }
+        HideSubCategories();
         HideContacts();
         HideAbout();
         HideOffer()
@@ -32,6 +59,7 @@ $(document).ready(function(){
             choosed = $("#nav-ofirmie");
              
         }
+        HideSubCategories();
         HideGlown();
         HideContacts();  
         HideOffer() 
@@ -43,6 +71,7 @@ $(document).ready(function(){
             $("#nav-oferta").addClass("nav-active");
             choosed = $("#nav-oferta");
         }
+        HideSubCategories();
         HideGlown();
         HideAbout();
         HideContacts();
@@ -55,6 +84,7 @@ $(document).ready(function(){
             $("#nav-kontakt").addClass("nav-active");
             choosed = $("#nav-kontakt");
         }
+        HideSubCategories();
         HideGlown();
         HideAbout();
         HideOffer()
@@ -136,11 +166,19 @@ $(document).ready(function(){
         
     }
 
+
+    
+
+
     HideContacts();
     HideAbout();
     //HideGlown();
     HideOffer();
+
+
+
     // Localization
+    $("#switch-languages-button").data("language", Cookies.get("language_id"));
     $("#switch-languages-button").click(function(){
         if ($("#switch-languages-button").data("language") == 0){
             TranslateToEn();
@@ -185,7 +223,15 @@ $(document).ready(function(){
     }
     $("#mobile-menu").hide();
 
-
+    function HideCategories(){
+        HideContacts();
+        HideAbout();
+        HideGlown();
+        HideOffer();
+    }
+    
+    
+    
 
     if (Cookies.get('language_id') != undefined){
         if (Cookies.get('language_id') == "0"){
@@ -212,12 +258,42 @@ $(document).ready(function(){
         setTimeout(function(){
             $("#preloader").addClass("d-none");
         }, 600);  
-    })
+    });
+    HideSubCategories();
+    function HideSubCategory(key) {
+        $("#" + key + "-section").addClass("subcategory-section-deactive");
+        $("#" + key + "-section img").addClass(".subcategory-image-deactive");
+        setTimeout(function(){
+            $("#" + key + "-section").addClass("d-none");
+        },500);
+    }
+    function HideSubCategories(){
+        $(".subcategory-section").addClass("subcategory-section-deactive");
+        $(".subcategory-section img").addClass(".subcategory-image-deactive");
+        setTimeout(function(){
+            $(".subcategory-section").addClass("d-none");
+        },500);
+    }
+    function ShowSubCategory(key){
+        $("#" + key + "-section").removeClass("d-none");
+        $("#" + key + "-section").removeClass("subcategory-section-deactive");
+        $("#" + key + "-section img").removeClass(".subcategory-image-deactive");
+    }
+    $(".subcategory-li").click(function(){
+        HideCategories();
+        $(".nav-active").removeClass("nav-active");
+    });
+    $("#ShowElektryczne").click(function(){
+        HideCategories();
+        $(".nav-active").removeClass("nav-active");
+    });
+    $(".menu-slide-toggle").click(function(){
+        $("#mobile-menu").slideToggle();
+    });
+    
 });
 
-$(".menu-slide-toggle").click(function(){
-    $("#mobile-menu").slideToggle();
-});
+
 
 
 

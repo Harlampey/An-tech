@@ -12,6 +12,9 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+::selection {
+    background-color: orange;
+}
 header {
     position: absolute;
     width: 100%;
@@ -35,7 +38,7 @@ header {
 #preloader i {
     font-size: 8em;
     line-height: 100vh;
-    color: greenyellow;
+    color: orange;
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
@@ -59,7 +62,7 @@ header div p {
     float: left;
     font-size: 34px;
     padding-right: 30px;
-    color: greenyellow;
+    color: orange;
 }
 section{
     height: 100%;
@@ -86,7 +89,7 @@ ul {
     cursor: pointer;
 }
 #navigation-menu li:hover {
-    color: greenyellow;
+    color: orange;
 }
 #navigation-menu li:nth-child(1){
     padding-right: 60px;
@@ -142,11 +145,11 @@ ul {
     transition: all 0.5s;
 }
 .nav-active {
-    color: greenyellow;
+    color: orange;
 }
 #main-description-row hr {
     border-width: 2px;
-    border-color: greenyellow;
+    border-color: orange;
     width: 50px;
     margin-left: 0;
 }
@@ -196,18 +199,33 @@ ul {
 }
 #offer-list {
     font-size: 2.4em;
+    padding: 0;
 }
-#offer-list li {
+.offer-li {
     padding-top: 25px;
 }
-#offer-list li:nth-child(1){
-    padding-top: 250px;
+.offer-li:nth-child(1){
+    padding-top: 190px;
 }
 .li-before {
     width: 75px;
     border-radius: 25px;
     float: left;
     padding-left: 15px;
+}
+.subcategory-ul {
+    font-size: 0.6em;
+    margin-left: 50px;
+}
+.subcategory-ul li, .offer-li:nth-child(2) {
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.subcategory-ul li:hover {
+    padding-left: 10px;
+}
+.offer-li:nth-child(2):hover {
+    padding-left: 20px;
 }
 
 
@@ -216,35 +234,36 @@ ul {
     padding-top: 200px;
     padding-left: 50px;
     font-size: 1.2em;
+    z-index: 55;
 }
 #camera-img-contacts {
     padding-top: 300px;
     margin-left: 50px;
 }
-#contacts .col-6, .col-12 {
+#contacts .col-6, #contacts .col-12 {
     padding: 0;
     margin: 0;
 }
 input {
     background: none;
     border: 0;
-    border-bottom: 2px solid greenyellow;
+    border-bottom: 2px solid orange;
     color: whitesmoke;
     padding-top: 20px;
 }
 #checkBoxCol {
-    padding: 20px 0 20px 0;
+    padding: 20px 0 20px 0 !important;
 }
 button {
     background: none;
     border-radius: 10px;
     width: 100px;
-    border: 2px solid greenyellow;
+    border: 2px solid orange;
     color: #fff;
     transition: all 0.5s;
 }
 button:hover {
-    color: yellowgreen;
+    color: orange;
 }
 
 
@@ -258,12 +277,25 @@ footer {
     background-color: rgba(0, 0, 15, 1);
     text-align: center;
     line-height: 40px;
+    z-index: 998;
 }
 
+/* subcategories */
+.subcategory-section {
+    padding: 200px 0 0 50px;
+    font-size: 1.4em;
+}
+.subcategory-image-deactive {
+    margin-left: 700px;
+}
+.subcategory-section-deactive {
+    opacity: 0;
+}
 
 /* animations */
 
-#anim-description, #description-hr, form, #contacts, #about-container, .img-decor, #offer-list, #offer-image{
+#anim-description, #description-hr, form, #contacts, #about-container, .img-decor, #offer-list, #offer-image, 
+.subcategory-section, .subcategory-section img {
     transition: all 0.5s;
 }
 .camera-img-deactivated {
@@ -311,7 +343,7 @@ footer {
     padding: 0;
 }
 #mobile-number {
-    color: yellowgreen;
+    color: orange !important;
     background-color: #060606;
     padding: 20px 0 20px 0;
 }
@@ -351,6 +383,9 @@ footer {
     #main-description-row ul{
         margin-left: -20px;
     }
+    header {
+        padding: 50px 50px 0px 20px;
+    }
 }
 
 @media screen and (max-width: 762px) {
@@ -358,16 +393,17 @@ footer {
         display: none !important;
     }
     form {
-        width: 300px;
+        width: 250px;
     }
     #camera-img-contacts {
-        padding-top: 0px;
+        padding-top: 80px;
         margin-left: 0px;
     }
     #offer-list {
         font-size: 1.7em;
+        text-align: right;
     }
-    #phone {
+    #phone, #about-decor-row {
         display: none;
     }
     #header-menu {
@@ -386,4 +422,31 @@ footer {
     #menu {
         display: block;
     }
+    #main-description-row {
+        padding-left: 0;
+        padding-top: 200px;
+    }
+    #about-container img {
+        padding-top: 20px;
+    }
+    #about-container img:nth-child(4){
+        padding-bottom: 100px;
+    }
+    .subcategory-ul li {
+        font-size: 1.2em;
+        padding-top: 25px;
+    }
+    .subcategory-section {
+        padding-left: 0;
+    }
+    .subcategory-section img {
+        max-width: 100% !important;
+    }
+    .li-before {
+        padding-left: 0;
+    }
+    .offer-li {
+        padding-top: 90px;
+    }
+
 }

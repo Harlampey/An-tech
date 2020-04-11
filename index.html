@@ -37,7 +37,7 @@
         <div id="header-menu">
             <p class="hide-in-762">Tel. +666 00 00 001</p>
             <img id="switch-languages-button" src="images/pl.png" alt="language" data-language=0>
-            <img id="menu" class="menu-slide-toggle" src="images/menu.png" alt="">
+            <img id="menu" class="menu-slide-toggle" src="images/orange_version/menu.png" alt="">
         </div>
     </header>
 
@@ -58,14 +58,14 @@
                 <hr class="invisible" id="description-hr" size="30">
                 </p>
                 <ul>
-                    <li><img class="description-point description-point-deactivated" src="images/check.png"> Lorem ispum</li>
-                    <li><img class="description-point description-point-deactivated" src="images/check.png"> Lorem ispum</li>
-                    <li><img class="description-point description-point-deactivated" src="images/check.png"> Lorem ispum</li>
+                    <li><img class="description-point description-point-deactivated" src="images/orange_version/check.png"> Lorem ispum</li>
+                    <li><img class="description-point description-point-deactivated" src="images/orange_version/check.png"> Lorem ispum</li>
+                    <li><img class="description-point description-point-deactivated" src="images/orange_version/check.png"> Lorem ispum</li>
                 </ul>
             </div>
 
             <div class="col-lg-6 col-12">
-                <img id="camera-img" class="camera-img-deactivated" src="images/camera1.png" alt="">
+                <img id="camera-img" class="camera-img-deactivated" src="images/orange_version/camera1.png" alt="">
             </div>
         </div>
     </section>
@@ -79,20 +79,37 @@
                 <img src="images/supercell.jpg" alt="">
         </div>
         <div id="about-decor-row" class="row">
-            <div class="col-6"><img id="deco-left-img" class="img-decor" src="images/about-left.png" alt=""></div>
-            <div class="col-6"><img id="deco-right-img" class="img-decor" src="images/about-right.png" alt=""></div>
+            <div class="col-6"><img id="deco-left-img" class="img-decor" src="images/orange_version/about-left.png" alt=""></div>
+            <div class="col-6"><img id="deco-right-img" class="img-decor" src="images/orange_version/about-right.png" alt=""></div>
         </div>
     </section>
 
     <section id="offerSection" class="">
         <div class="row">
-            <div class="order-lg-1 order-2 col-lg-6 col-12"><img id="offer-image" src="images/camera3.png" alt=""></div>
+            <div class="order-lg-1 order-2 col-lg-6 col-12"><img id="offer-image" src="images/orange_version/camera3.png" alt=""></div>
             <div class="order-lg-2 order-1 col-lg-6 col-12 ">
                 <ul id="offer-list">
-                    <li><img src="images/offer-1.png" class="li-before">&nbsp; Instalankje elletrik</li>
-                    <li><img src="images/offer-2.png" class="li-before">&nbsp; Syctemy B</li>
-                    <li><img src="images/offer-3.png" class="li-before">&nbsp; Monitoring</li>
-                    <li><img src="images/offer-4.png" class="li-before">&nbsp; Lorem ispum</li>
+                    <li class="offer-li">
+                        <img src="images/orange_version/offer-1.png" class="li-before">&nbsp; Systemy Bezpieczeństwa
+                        <ul class="subcategory-ul">
+                            <li class="subcategory-li" data-key="monitoring" onclick="ShowSubCategory('monitoring');" style="padding-top: 10px;">Monitoring <i class="fas fa-angle-right"></i></li>
+                            <li class="subcategory-li" data-key="alarmy" onclick="ShowSubCategory('alarmy');">Alarmy <i class="fas fa-angle-right"></i></li>
+                            <li class="subcategory-li" data-key="instalacje" onclick="ShowSubCategory('instalacje');">Instalacje PPOŻ <i class="fas fa-angle-right"></i></li>
+                        </ul>
+                    
+                    </li>
+                    <li class="offer-li" id="ShowElektryczne" onclick="ShowSubCategory('elektryczne');"><img src="images/orange_version/offer-2.png" class="li-before" >&nbsp; Instalacje elektryczne <i class="fas fa-angle-right"></i></li>
+                    <li class="offer-li">
+                        <img src="images/orange_version/offer-3.png" class="li-before">&nbsp; Automatyka Dostępu
+                        <ul class="subcategory-ul">
+                            <li class="subcategory-li" data-key="videofony" onclick="ShowSubCategory('videofony');" style="padding-top: 10px;">
+                                Videofony
+                                 <i class="fas fa-angle-right"></i></li>
+                            <li class="subcategory-li" data-key="kontrola" onclick="ShowSubCategory('kontrola');">Kontrola Dostępu <i class="fas fa-angle-right"></i></li>
+                            <li class="subcategory-li" data-key="rejestracja" onclick="ShowSubCategory('rejestracja');">Rejestracja Czasu Pracy <i class="fas fa-angle-right"></i></li>
+                            <li class="subcategory-li" data-key="systemy" onclick="ShowSubCategory('systemy');">Systemy Hotelowe <i class="fas fa-angle-right"></i></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -119,11 +136,112 @@
                     </div>
                 </form>
             </div>
-            <div class="col-lg-6 col-12"><img id="camera-img-contacts" src="images/camera2.png" alt="camera"></div>
+            <div class="col-lg-6 col-12"><img id="camera-img-contacts" src="images/orange_version/camera2.png" alt="camera"></div>
         </div>
     </section>
 
 
+    <!-- subcategories -->
+
+    <section id="monitoring-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-lg-8"><p id="monitoring-text">
+                Zależy Nam na Twoim i Naszym bezpieczeństwie, więc do instalacji kamer podchodzimy szczególnie poważnie...
+                <br>
+                Lata 2014 - 2018 to:
+                <ul style="list-style: square;">
+                    <li>ponad 4000 zainstalowanych przez Nas kamer</li>
+                    <li>ponad 100 lokalizacji</li>
+                    <li>setki zadowolonych klientów</li>
+                    <li>dziesiątki innowacyjnych rozwiązań</li>
+                </ul>
+            </p></div>
+            <div class="col-lg-4"><img style="max-width: 60%;" src="images/subcategories/monitoring.jpg" alt="camera"></div>
+        </div>
+        
+    </section>
+
+    <section id="alarmy-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-lg-12"><p id="monitoring-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor augue a turpis porttitor maximus. Nulla luctus elementum felis, sit amet condimentum lectus rutrum eget.
+            </p></div>
+            <div class="col-lg-12"><img style="max-width: 40%;" src="images/subcategories/alarmy.jpg" alt="camera"></div>
+        </div>
+        
+    </section>
+
+    <section id="instalacje-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-lg-12"><p id="monitoring-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor augue a turpis porttitor maximus. Nulla luctus elementum felis, sit amet condimentum lectus rutrum eget.
+            </p></div>
+            <div class="col-lg-12"><img style="max-width: 40%;" src="images/subcategories/instalacje.jpg" alt="camera"></div>
+        </div>
+        
+    </section>
+
+
+
+    <section id="elektryczne-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-lg-12"><p id="monitoring-text">
+                Zajmujemy się wykonywaniem nowych instalacji elektrycznych oraz modernizacją już istniejących instalacji, które znajdują się w Waszym:
+                <br>
+                <ul style="list-style: square;">
+                    <li>biurze</li>
+                    <li>domu</li>
+                    <li>bloku mieszkalnym</li>
+                </ul>
+            </p></div>
+            <div class="col-lg-12"><img style="max-width: 32%;" src="images/subcategories/elektryczne.jpg" alt="camera"></div>
+        </div>
+        
+    </section>
+
+
+
+    <section id="videofony-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-lg-12"><p id="monitoring-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor augue a turpis porttitor maximus. Nulla luctus elementum felis, sit amet condimentum lectus rutrum eget.
+            </p></div>
+            <div class="col-lg-12"><img style="max-width: 45%;" src="images/subcategories/videofony.gif" alt="camera"></div>
+        </div>
+        
+    </section>
+
+    <section id="kontrola-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-lg-12"><p id="monitoring-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor augue a turpis porttitor maximus. Nulla luctus elementum felis, sit amet condimentum lectus rutrum eget.
+            </p></div>
+            <div class="col-lg-12"><img style="max-width: 38%;" src="images/subcategories/kontrola.jpg" alt="camera"></div>
+        </div>
+        
+    </section>
+
+    <section id="rejestracja-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-12"><p id="monitoring-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor augue a turpis porttitor maximus. Nulla luctus elementum felis, sit amet condimentum lectus rutrum eget.
+            </p></div>
+            <div class="col-12"><img style="max-width: 46%;" src="images/subcategories/rejestracja.jpg" alt="camera"></div>
+        </div>
+        
+    </section>
+
+    <section id="systemy-section" class="subcategory-section">
+        <div class="row">
+            <div class="col-12"><p id="monitoring-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor augue a turpis porttitor maximus. Nulla luctus elementum felis, sit amet condimentum lectus rutrum eget.
+            </p></div>
+            <div class="col-12"><img style="max-width: 40%;" src="images/subcategories/systemy.jpg" alt="camera"></div>
+        </div>
+        
+    </section>
+
+    <!--  -->
 
     <footer>
         <div class="row">
